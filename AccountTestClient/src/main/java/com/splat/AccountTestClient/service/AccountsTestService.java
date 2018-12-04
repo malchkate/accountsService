@@ -1,9 +1,8 @@
-package com.splat.AccountTestClient;
+package com.splat.AccountTestClient.service;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,11 +18,10 @@ public class AccountsTestService {
     private final RestTemplate restTemplate;
 
     @Async
-    public CompletableFuture<Long> getAccountAmount(String url){
+    public void getAccountAmount(String url){
         logger.info("Getting " + url);
         Long accountAmount = restTemplate.getForObject(url, Long.class);
         logger.info("Resulting for url " + url + " .....      " + accountAmount);
-        return CompletableFuture.completedFuture(accountAmount);
     }
 
     @Async

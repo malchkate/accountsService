@@ -25,14 +25,13 @@ public class AccountsController implements AccountService {
     @GetMapping("/{id}")
     @Cacheable(value = "accounts", key = "#id")
     @Override
-    //@Transactional
     public Long getAmount(@PathVariable Integer id) {
         Optional<Account> account = accountRepository.findById(id);
         long amount = 0;
         if (account.isPresent()) {
             amount = account.get().amount.get();
         }
-        statisticsProvider.getRequests.mark();                      //todo
+        statisticsProvider.getRequests.mark();                     
         return amount;
     }
 
@@ -48,7 +47,7 @@ public class AccountsController implements AccountService {
         } else{
             accountRepository.save(new Account(id, new AtomicLong(value)));
         }
-        statisticsProvider.postRequests.mark();                      //todo
+        statisticsProvider.postRequests.mark();
     }
 
 }
