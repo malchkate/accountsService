@@ -23,16 +23,18 @@ public class ClientCommandLineRunner implements CommandLineRunner {
         String url = configurationsProcessor.getBasicUrlPart();
         int randomId = 0;
         long randomAmountInc = 0;
-        for (int r = 0; r < configurationsProcessor.getRCount(); r++) {
-            randomId = ThreadLocalRandom.current().nextInt(configurationsProcessor.getIdListL(),
-                    configurationsProcessor.getIdListR() + 1);
-            accountsTestService.getAccountAmount(url + randomId);
-        }
+
         for (int w = 0; w < configurationsProcessor.getWCount(); w++) {
             randomId = ThreadLocalRandom.current().nextInt(configurationsProcessor.getIdListL(),
                     configurationsProcessor.getIdListR() + 1);
             randomAmountInc = ThreadLocalRandom.current().nextLong(-1848, 180479);
             accountsTestService.postAccountAmount(url + randomId + "/" + randomAmountInc);
+        }
+
+        for (int r = 0; r < configurationsProcessor.getRCount(); r++) {
+            randomId = ThreadLocalRandom.current().nextInt(configurationsProcessor.getIdListL(),
+                    configurationsProcessor.getIdListR() + 1);
+            accountsTestService.getAccountAmount(url + randomId);
         }
         logger.info("Results");
         accountsTestService.getAccountAmount(url + 1);
