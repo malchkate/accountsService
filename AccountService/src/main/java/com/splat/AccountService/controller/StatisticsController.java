@@ -1,6 +1,6 @@
 package com.splat.AccountService.controller;
 
-import com.splat.AccountService.StatisticsProvider;
+import com.splat.AccountService.service.StatisticsProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

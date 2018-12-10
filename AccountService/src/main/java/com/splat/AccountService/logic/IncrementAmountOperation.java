@@ -1,6 +1,6 @@
 package com.splat.AccountService.logic;
 
-import com.splat.AccountService.DBAdapter;
+import com.splat.AccountService.service.DBAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

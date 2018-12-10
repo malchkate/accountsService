@@ -1,4 +1,4 @@
-package com.splat.AccountService;
+package com.splat.AccountService.service;
 
 import com.codahale.metrics.Meter;
 import com.codahale.metrics.MetricRegistry;
@@ -29,7 +29,7 @@ public class StatisticsProvider {
                 .convertRatesTo(TimeUnit.SECONDS)
                 .convertDurationsTo(TimeUnit.MILLISECONDS)
                 .build();
-        reporter.start(10,TimeUnit.SECONDS);
+        reporter.start(1,TimeUnit.SECONDS);
     }
 
     public void dropMetrics(){

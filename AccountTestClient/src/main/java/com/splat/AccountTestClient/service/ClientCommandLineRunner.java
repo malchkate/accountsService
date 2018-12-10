@@ -1,6 +1,5 @@
-package com.splat.AccountTestClient;
+package com.splat.AccountTestClient.service;
 
-import com.splat.AccountTestClient.service.AccountsTestService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +35,5 @@ public class ClientCommandLineRunner implements CommandLineRunner {
                     configurationsProcessor.getIdListR() + 1);
             accountsTestService.getAccountAmount(url + randomId);
         }
-        logger.info("Results");
-        accountsTestService.getAccountAmount(url + 1);
     }
 }

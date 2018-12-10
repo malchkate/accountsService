@@ -1,4 +1,4 @@
-package com.splat.AccountService;
+package com.splat.AccountService.service;
 
 import com.splat.AccountService.model.Account;
 import com.splat.AccountService.repository.AccountRepository;

@@ -2,7 +2,7 @@ package com.splat.AccountService.controller;
 
 import com.splat.AccountService.logic.GetAmountOperation;
 import com.splat.AccountService.logic.IncrementAmountOperation;
-import com.splat.AccountService.StatisticsProvider;
+import com.splat.AccountService.service.StatisticsProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

@@ -1,4 +1,4 @@
-package com.splat.AccountTestClient;
+package com.splat.AccountTestClient.service;
 
 import lombok.Getter;
 import org.springframework.stereotype.Component;
@@ -26,7 +26,7 @@ public class ConfigurationsProcessor {
         Properties properties = new Properties();
         InputStream input = null;
         try {
-            input = new FileInputStream("config.properties");
+            input = new FileInputStream("configuration.properties");
             properties.load(input);
             rCount = Integer.parseInt(properties.getProperty("rCount"));
             wCount = Integer.parseInt(properties.getProperty("wCount"));
